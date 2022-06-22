@@ -1,0 +1,148 @@
+/* pages/component/member/member.wxss */
+.user-container{
+	position: relative;
+	margin-bottom:20rpx;
+	background: linear-gradient(to right, #FF496C,#FF496C);
+	overflow: hidden;
+}
+.beautiful-right{
+	position: absolute;
+	right: 40rpx;
+	bottom: 120rpx;
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	background: linear-gradient(to right, rgba(255,255,255,0.05),rgba(255,255,255,.2));	
+}
+.beautiful-left{
+	position: absolute;
+	left: 40rpx;
+	top: 40rpx;
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	background: linear-gradient(to right, rgba(255,255,255,0.05),rgba(255,255,255,.2));	
+}
+.beautiful-top{
+	position: absolute;
+	left: 50%;
+	top: -40rpx;
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	background: linear-gradient(to right, rgba(255,255,255,0.05),rgba(255,255,255,.2));	
+}
+.beautiful-right-line{
+	position: absolute;
+	left: 40%;
+	bottom: 60rpx;
+	width: 400rpx;
+	height: 120rpx;
+	border-radius: 8rpx;
+	transform: rotate(45deg);
+	background: linear-gradient(to right, rgba(255, 44, 85,0.05),#FF2C55);	
+}
+.beautiful-bottom-block{
+	position: absolute;
+	left: 60%;
+	top: 80rpx;
+	width: 100rpx;
+	height: 8rpx;
+	border-radius: 8rpx;
+	transform: rotate(45deg);
+	background: linear-gradient(to right, rgba(255,255,255,0.05),rgba(255,255,255,.3));	
+}
+.user-header{
+	min-height: 300rpx;
+	padding: 20rpx 30rpx 100rpx 30rpx;
+}
+.login-box{
+	position: relative;
+	z-index: 9;
+	min-height: 300rpx;
+}
+.user-headimg{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 10rpx;
+	border: 2rpx solid #fff;
+	overflow: hidden;
+}
+.user-common-bar.order-block{
+	position: relative;
+	margin-top: -100rpx;
+	background-color: #fff;
+}
+.user-common-bar{margin: 0 30rpx 20rpx 30rpx;border-radius: 20rpx;overflow: hidden;}
+.user-common-bar .cu-list.grid.no-border{padding:0 10rpx;}
+.user-common-bar .iconfont{font-size: 56rpx;}
+.user-common-bar .card-title {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20rpx 60rpx 20rpx 24rpx;
+}
+.user-common-bar .card-title .bar-title{font-size: 32rpx;color: #000;}
+.user-common-bar .cu-list.grid>.cu-item text {margin-top: 0;}
+.nickname{
+	font-size: 40rpx;
+	color: #fff;
+}
+.userphone{
+	width: 200rpx;
+	border-radius: 20rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 24rpx;
+	background-color: rgba(0,0,0,.1);
+}
+.userphone .cuIcon-mobile{font-size: 20rpx;}
+.icon-theme{
+	color: #E1B37C;
+}
+.iconfont{
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.icon-unpaid{
+	background-image: -webkit-linear-gradient(-45deg, #FF2EC7 20%, #FF496C 60%);
+}
+.icon-unreceived{
+	background-image: -webkit-linear-gradient(-45deg, #FF2EC7 20%, #FF496C 60%);
+}
+.icon-finish{
+	background-image: -webkit-linear-gradient(-45deg, #FF2EC7 20%, #FF496C 60%);
+}
+.icon-refund{
+	background-image: -webkit-linear-gradient(-45deg, #FF2EC7 20%, #FF496C 60%);
+}
+.icon-order{
+	background-image: -webkit-linear-gradient(-45deg, #FFDEA7 20%, #EA6362 60%);
+}
+.icon-address{
+	background-image: -webkit-linear-gradient(-45deg, #FFDEA7 20%, #EA6362 60%);
+}
+.icon-collect{
+	background-image: -webkit-linear-gradient(-45deg, #f857a6 20%, #ff5858 60%);
+}
+.icon-history{
+	background-image: -webkit-linear-gradient(-45deg, #F4E8FA 20%, #00C0F9 60%);
+}
+.icon-coupon{
+	background-image: -webkit-linear-gradient(-45deg, #A770EF 20%, #CF8BF3 60%);
+}
+.icon-kefu{
+	background-image: -webkit-linear-gradient(-45deg, #B2FEFA 20%, #0ED2F7 60%);
+}
+.icon-help{
+	background-image: -webkit-linear-gradient(-45deg, #fd746c 20%, #ff9068 60%);
+}
+.icon-feedback{
+	background-image: -webkit-linear-gradient(-45deg, #FBD786 20%, #f7797d 60%);
+}
+.icon-setting{
+	background-image: -webkit-linear-gradient(-45deg, #FBA7B8 20%, #FF496C 60%);
+}

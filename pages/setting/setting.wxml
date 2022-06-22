@@ -1,0 +1,43 @@
+<!--pages/setting/setting.wxml-->
+<navBar title='个人设置' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>
+<view class="mt-10">
+	<view class="cu-list menu sm-border">
+		<view class="cu-item arrow">
+			<view class="content">
+				<text class="text-black">头像</text>
+			</view>
+			<view class="action">
+				<image class="headimgUrl" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+			</view>
+		</view>
+		<view class="cu-item">
+			<view class="content">
+				<text class="text-black">昵称</text>
+			</view>
+			<view class="action">
+				<text class="text-grey">{{userInfo.nickName}}</text>
+			</view>
+		</view>
+		<view class="cu-item">
+			<view class="content">
+				<text class="text-black">用户名</text>
+			</view>
+			<view class="action">
+				<text class="text-grey">GMT00001</text>
+			</view>
+		</view>
+		<view class="cu-item arrow">
+			<view class="content">
+				<text class="text-black">我的二维码</text>
+			</view>
+			<view class="action">
+				<view class="cuIcon-qr_code text-gray"></view>
+			</view>
+		</view>
+		<view class="cu-item arrow" bindtap="gomoreinfo">
+			<view class="content">
+				<text class="text-black">更多</text>
+			</view>
+		</view>
+	</view>
+</view>

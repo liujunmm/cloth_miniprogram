@@ -1,0 +1,5 @@
+/* pages/moreinfo/moreinfo.wxss */
+.text-grey{color: #9E9E9E;}
+.cu-list.menu>.cu-item.arrow{
+	padding-right: 70rpx;
+}

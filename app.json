@@ -1,0 +1,72 @@
+{
+	"pages": [
+		"pages/component/member/member",
+		"pages/component/index/index",
+		"pages/goodsdetail/goodsdetail",
+		"pages/component/cart/cart",
+		"pages/confirmorder/confirmorder",
+		"pages/myorderdetail/myorderdetail",
+		"pages/component/classify/classify",
+		"pages/component/sales/sales",
+		"pages/goodslist/goodslist",
+		"pages/address/address",
+		"pages/collect/collect",
+		"pages/history/history",
+		"pages/coupon/coupon",
+		"pages/service/service",
+		"pages/helper/helper",
+		"pages/feedback/feedback",
+		"pages/setting/setting",
+		"pages/moreinfo/moreinfo",
+		"pages/myorder/myorder"
+		
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "服装网",
+		"navigationBarTextStyle": "black",
+		"navigationStyle":"custom"
+	},
+	"tabBar": {
+		"color": "#9E9E9E",
+		"selectedColor": "#FF6D8A",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/component/index/index",
+				"iconPath": "images/icon/home.png",
+				"selectedIconPath": "images/icon/home_A.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/component/classify/classify",
+				"iconPath": "images/icon/classify.png",
+				"selectedIconPath": "images/icon/classify_A.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/component/cart/cart",
+				"iconPath": "images/icon/cart.png",
+				"selectedIconPath": "images/icon/cart_A.png",
+				"text": "进货车"
+			},
+			{
+				"pagePath": "pages/component/member/member",
+				"iconPath": "images/icon/member.png",
+				"selectedIconPath": "images/icon/member_A.png",
+				"text": "我的"
+			}
+		]
+	},
+	"networkTimeout": {
+	    "request": 10000,
+	    "connectSocket": 10000,
+	    "uploadFile": 10000,
+	    "downloadFile": 10000
+	},
+	"sitemapLocation": "sitemap.json",
+	"usingComponents": {
+		"navBar": "/components/navBar/navBar"
+	}
+}

@@ -1,0 +1,31 @@
+
+#有返回和home
+
+<navBar title='有返回和home' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+
+#有返回和home  （带搜索内容）
+
+<navBar title='' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick">
+    <view class='lxy-nav-bar-search' slot="center">
+        <view class='lxy-nav-bar-search__icon' />
+        <view class='lxy-nav-bar-search__input'>
+            <input autoFocus="true" bindconfirm="confirmSearch" bindinput="search" class="srch-ipt" confirmType="search" placeholder="搜索内容" placeholderClass="ipt-placeholder" type="text" value=""></input>
+        </view>
+    </view>
+</navBar>
+
+#详情页（带返回按钮）
+
+<navBar title='详情页' background='#fff' back="{{true}}" bindback="handlerGobackClick"></navBar>
+
+#深色背景详情页(黑色背景+返回按钮)
+
+<navBar title='深色背景详情页' background='#000000' backgroundColorTop='#000000' color='#fff' back="{{true}}" iconTheme='white' bindback="handlerGobackClick"></navBar>
+
+#深色背景详情页(黑色背景+首页图标+返回图标)
+
+<navBar title='深色背景详情页' background='#000000' color='#fff' back="{{true}}" home="{{true}}" iconTheme='white' bindback="handlerGobackClick" bindhome="handlerGohomeClick"></navBar>
+
+#返回图标+首页图标+自定义标题
+
+<navBar title='自定义样式' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick" extClass="lxy-navbar-extclass"></navBar>

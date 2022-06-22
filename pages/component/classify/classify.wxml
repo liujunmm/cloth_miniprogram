@@ -1,0 +1,47 @@
+<!--分类-->
+<navBar title='分类' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{false}}" iconTheme='white'
+ bindback="handlerGobackClick"></navBar>
+<view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px;">
+	<view class="search-form round">
+		<text class="cuIcon-search"></text>
+		<input bindinput="InputFocus" :adjust-position="false" type="text" placeholder="搜索商品/品牌/分类" confirm-type="search"></input>
+	</view>
+	<view class="action">
+		<view class="text-center sub-action">
+			<view class="cuIcon cuIcon-mark"></view> 客服
+		</view>
+		<view class="text-center sub-action" bindtap='getScancode'>
+			<view class="cuIcon cuIcon-scan"></view> 扫一扫
+		</view>
+	</view>
+</view>
+<view class="VerticalBox">
+	<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - {{CustomBar}}px - 50px)">
+		<view class="cu-item {{index==TabCur?'text-theme cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+			{{item.name}}
+		</view>
+	</scroll-view>
+	<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-into-view="main-{{MainCur}}"
+	 bindscroll="VerticalMain">
+		<image src="../../../images/middle.jpg" mode="widthFix"></image>
+		<view wx:for="{{list}}" wx:key id="main-{{index}}">
+			<view class='cu-bar bg-white'>
+				<view class='action'>- {{item.name}} -</view>
+			</view>
+			<view class="cu-list classify-list grid col-3 no-border">
+				<view class="cu-item" bindtap="goGoodslist">
+					<image src="../../../images/1.jpg" mode="widthFix"></image>
+					<text>连衣裙</text>
+				</view>
+				<view class="cu-item" bindtap="goGoodslist">
+					<image src="../../../images/3.jpg" mode="widthFix"></image>
+					<text>半身裙</text>
+				</view>
+				<view class="cu-item" bindtap="goGoodslist">
+					<image src="../../../images/2.jpg" mode="widthFix"></image>
+					<text>A字群</text>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

@@ -1,0 +1,71 @@
+/* pages/component/classify/classify.wxss */
+page {
+	padding-top: 100rpx;
+}
+image{width: 100%;}
+
+.sub-action {
+	font-size: 24rpx;
+}
+
+.sub-action:last-child {
+	margin-left: 30rpx;
+}
+
+.sub-action .cuIcon {
+	font-size: 38rpx;
+	height: 40rpx;
+	margin-bottom: 10rpx;
+}
+
+.VerticalNav.nav {
+	width: 160rpx;
+	white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	border: none;
+	height: 50px;
+	position: relative;
+}
+
+.VerticalNav.nav .cu-item.cur {
+	background-color: #FFFFFF;
+}
+
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 0 10rpx 10rpx 0;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  left: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+
+.VerticalBox {
+	display: flex
+}
+
+.VerticalMain {
+	width: calc(100% - 160rpx);
+	background-color: #f1f1f1;
+}
+
+.classify-list image {
+	height: 100%;
+	min-height: 100rpx;
+}
+
+.VerticalMain .cu-bar {
+	min-height: 60rpx;
+}
+.cu-bar {
+	justify-content: center;
+}

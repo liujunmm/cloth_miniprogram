@@ -1,0 +1,97 @@
+<!--pages/goodslist/goodslist.wxml-->
+<navBar title='连衣裙' background='#fff' back="{{true}}" bindback="handlerGobackClick" extClass="lxy-navbar-extclass"></navBar>
+ <view class="fixed shadow" style="top:{{CustomBar}}px;">
+	 <view class="cu-bar search bg-white">
+	 	<view class="search-form round">
+	 		<text class="cuIcon-search"></text>
+	 		<input bindinput="InputFocus" :adjust-position="false" type="text" placeholder="搜索商品/品牌/分类" confirm-type="search"></input>
+	 	</view>
+	 	<view class="action">
+	 		<view class="text-center sub-action">
+	 			<view class="cuIcon cuIcon-mark"></view> 客服
+	 		</view>
+	 		<view class="text-center sub-action" bindtap='getScancode'>
+	 			<view class="cuIcon cuIcon-scan"></view> 扫一扫
+	 		</view>
+	 	</view>
+	 </view>
+	 <!-- 筛选导航 -->
+	 <view class="filter-container bg-white">
+	 	<view class="flex flex-align-center">
+	 		<view class="flex1"><view class="text-center">价格</view></view>
+	 		<view class="flex1"><view class="text-center">有货</view></view>
+	 		<view class="flex1"><view class="text-center">销量</view></view>
+	 		<view class="flex1"><view class="text-center">品牌</view></view>
+	 	</view>
+	 </view>
+ </view>
+<view class="common-goods-container">
+	<view class="common-goods-list">
+		<view class="common-goods-item">
+			<image src="../../images/p1.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">24.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+		<view class="common-goods-item">
+			<image src="../../images/p2.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">24.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+		<view class="common-goods-item">
+			<image src="../../images/p2.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">23.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+		<view class="common-goods-item">
+			<image src="../../images/p1.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">27.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+		<view class="common-goods-item">
+			<image src="../../images/p1.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">23.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+		<view class="common-goods-item">
+			<image src="../../images/p2.jpg" mode="widthFix"></image>
+			<view class="common-goods-info">
+				<view class="flex flex-align-center">
+					<view class="cu-tag bg-theme sm">代理</view>
+					<view class="price text-price">27.00</view>
+				</view>
+				<view>GTA0001</view>
+				<view class="ellipsis1">水之恋 | 连衣裙</view>
+			</view>
+		</view>
+	</view>
+</view>

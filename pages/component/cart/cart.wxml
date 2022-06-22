@@ -1,0 +1,63 @@
+<navBar title='进货车' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{false}}" iconTheme='white' bindback="handlerGobackClick"></navBar>
+<view class="cart-top-bar bg-white fixed" style="top:{{CustomBar}}px;">
+	<view class="flex align-center justify-between">
+		<view class="flex1">再购<text class="text-price price">20.00</text>可免邮费</view>
+		<view>编辑</view>
+	</view>
+</view>
+<scroll-view class="page" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+	<view class="cart-container">
+		<view class="cart-list">
+			<!-- 进货商品列表 -->
+			<view class="cart-item bg-white" wx:for="{{carts}}" wx:key="key" wx:for-index="cartindex">
+				<view class="goods-cart-info flex align-center">
+					<checkbox class='round theme cb' checked="{{item.isSelect}}" value="{{item.id}}" bindtap="switchSelect" data-cart="{{cartindex}}" data-index="{{cartindex}}" data-id="{{item.id}}" data-type="1"></checkbox>
+					<image src="{{item.pic}}" mode="widthFix"></image>
+					<view class="flex1">
+						<view class="font-bold text-black">{{item.name}}</view>
+						<view>款号：{{item.code}}</view>
+						<view class="flex flex-align-center">
+							<view>单价：<text class="text-price price">{{item.price}}/件</text></view>
+						</view>
+					</view>
+				</view>
+				<view class="goods-cart-detail">
+					<!-- 进货参数循环 -->
+					<view class="goods-detail-attr flex align-center" wx:for="{{item.sizeArr}}" wx:key="key" wx:for-item="val" wx:for-index="index">
+						<checkbox class='round theme cb' checked="{{val.isSelect}}" value="{{val.sizeid}}" bindtap="switchSelect" data-cart="{{cartindex}}" data-index="{{index}}" data-id="{{val.sizeid}}" data-type="2"></checkbox>
+						<view class="flex1 attr-item">
+							<view class="flex align-center">
+								<view class="flex1 goods-attr">颜色：{{val.color}}</view>
+								<view class="flex1 goods-attr">尺寸：{{val.size}}</view>
+								<view class="flex1">
+									<import src="../../template/template.wxml" />
+									<view class='action-btn-sum flex justify-between'>
+										<template is="quantity" data="{{ ...val,index:cartindex,sizekey:index}}" />
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+
+<view class="count-bar padding-left top-line">
+	<view class="flex">
+		<view class="flex1">
+			<view class="flex count-container align-center justify-between">
+				<view class="select-all">
+					<checkbox class='round theme cb' checked="{{isAllSelect}}" value="all" bindtap="allSelect"></checkbox>
+					<view class="margin-left-xs text-gray">已选：{{totalNum}}</view>
+				</view>
+				<view class="total-box">
+					<view class="total-price">合计：<text class="text-price price">{{totalMoney}}</text></view>
+					<view class="total-coupon text-gray">已优惠：<text class="text-price">0.00</text></view>
+				</view>
+			</view>
+		</view>
+		<button class="cu-btn bg-theme balance" bindtap="toBuy" formType="submit">去结算(1)</button>
+	</view>
+</view>

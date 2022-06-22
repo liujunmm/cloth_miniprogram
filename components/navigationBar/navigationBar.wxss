@@ -1,0 +1,16 @@
+.view-navigation-bg {
+	z-index: 9999;
+	position: fixed;
+	top:0;
+	background: #FF496C;
+}
+
+.view-navigation-container {
+	z-index: 9999;
+	position: fixed;
+	top:0;
+	text-align: center;
+	font-size: 17px;
+	color: #FFFFFF;
+	font-weight: 700;
+}

@@ -1,0 +1,25 @@
+/* pages/myorderdetail/myorderdetail.wxss */
+.page{padding-bottom: 100rpx;}
+.order-item {margin-bottom: 20rpx}
+.order-icon {width: 50rpx;height: 50rpx;line-height: 50rpx;border-radius: 50%;text-align: center;margin-right: 20rpx}
+.order-icon .iconfont {font-size: 32rpx}
+.order-no {color: #000;}
+.order-content {padding: 0 30rpx}
+.goods-item {padding: 20rpx 0;}
+.goods-thumbnail {width: 160rpx;margin-right: 24rpx}
+.goods-thumbnail image{border-radius: 10rpx}
+.goods-title {font-size: 32rpx}
+.order-list-btn button {margin-left: 20rpx;}
+.contact-name,.conact-phone{font-size: 32rpx;}
+.order-detail-bottom{
+	z-index: 99;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.order-detail-bottom .cu-bar{
+	width: 100%;
+	padding: 0 30rpx;
+}
+.order-total .price{font-size: 36rpx;}

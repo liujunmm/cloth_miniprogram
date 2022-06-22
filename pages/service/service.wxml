@@ -1,0 +1,2 @@
+<!--pages/service/service.wxml-->
+<navBar title='我的客服' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>

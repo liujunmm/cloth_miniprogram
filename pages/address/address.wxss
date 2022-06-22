@@ -1,0 +1,23 @@
+/* pages/address/address.wxss */
+.fixed-bottom{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.text-grey{color: #9E9E9E;}
+button{border-radius: 0;min-height: 100rpx}
+.bg-wechat{
+	color: #fff;
+	background-color: #454452;
+}
+.address-list{
+	padding: 0 30rpx;
+}
+.address-item{
+	padding: 20rpx 0;
+}
+.address-top{
+	color: #000;
+	font-size: 32rpx;
+}

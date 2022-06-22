@@ -1,0 +1,1 @@
+<navBar title='代卖' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{false}}" iconTheme='white' bindback="handlerGobackClick"></navBar>

@@ -1,0 +1,26 @@
+<!--pages/address/address.wxml-->
+<navBar title='我的地址' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>
+
+<view class="address-list bg-white" wx:if="{{flag}}">
+	<view class="address-item bottom-line">
+		<view class="flex">
+			<view class="address-top">{{userName}}，{{telNumber}}</view>
+		</view>
+		<view class="flex">
+			<view class="text-gray">{{provinceName}} {{cityName}} {{countyName}} {{detailInfo}}</view>
+		</view>
+	</view>
+	<view class="address-item bottom-line">
+		<view class="flex">
+			<view class="address-top">{{userName}}，{{telNumber}}</view>
+		</view>
+		<view class="flex">
+			<view class="text-gray">{{provinceName}} {{cityName}} {{countyName}} {{detailInfo}}</view>
+		</view>
+	</view>
+</view>
+
+<view class="fixed-bottom flex ">
+	<button class="flex1 cu-btn lg bg-wechat" bindtap="chooseAddress">使用微信地址</button>
+	<button class="flex1 cu-btn lg bg-theme">新增地址</button>
+</view>

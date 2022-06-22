@@ -1,0 +1,345 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<navBar title='详情展示' background='#fff' back="{{true}}" home="{{true}}" bindback="handlerGobackClick" bindhome="handlerGohomeClick"
+ extClass="lxy-navbar-extclass"></navBar>
+<scroll-view class="page" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+	<!-- 轮播图 -->
+	<view class='carousel'>
+		<swiper wx:if="{{!playVideo}}" class='carousel_swiper' indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}"
+		 interval='{{interval}}' current="{{swiperCurrent}}" bindchange="swiperChange">
+			<block wx:for="{{carouselList}}" wx:for-index="idx" wx:key="key">
+				<swiper-item wx:if="{{item.type == 'video'}}">
+					<view class='course-pannle-item'>
+						<view class='video-item'>
+							<image class='video-cover' wx:if='{{!playVideo}}' mode='widthFix' src="{{item.coverUrl}}"></image>
+							<view class='video-play-btn' wx:if='{{!playVideo}}' mode='widthFix' data-index='{{idx}}' bindtap='videoPlay'>
+								<view class="cuIcon-video"></view>
+							</view>
+						</view>
+					</view>
+				</swiper-item>
+				<swiper-item wx:if="{{item.type == 'image' && !playVideo}}">
+					<image class="carouselImg" src='{{item.url}}' mode='widthFix' bindtap='previewImg' data-previewurl='{{previewArr}}'
+					 data-currenturl='{{item.url}}'></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<block wx:for="{{carouselList}}" wx:for-index="idx" wx:key="key">
+			<view class='course-pannle-item' wx:if="{{item.type == 'video' && playVideo}}">
+				<view class='video-item'>
+					<video wx:if='{{idx==playIndex}}' id='video{{idx}}' autoplay='{{true}}' show-center-play-btn="{{false}}" src='{{item.url}}'
+					 controls="{{true}}" objectFit="cover" bindplay='playvideo' bindpause='pausevideo' bindended="endvideo">
+					</video>
+				</view>
+			</view>
+		</block>
+		<view class="dots" wx:if="{{!playVideo}}">
+			<block wx:for="{{carouselList}}" wx:key="unique">
+				<view class="dot{{index == swiperCurrent ? ' current' : ''}}"></view>
+			</block>
+		</view>
+	</view>
+	<view class="goods-detail-container bg-white">
+		<view class="goods-detail-basic">
+			<view class="flex flex-align-center">
+				<view class="flex1 flex-column flex-align-center">
+					<view class="goods-detail-price flex flex-align-center">
+						<view class="cu-tag sm bg-theme">普通会员</view>
+						<view class="price text-price">84.00</view>
+					</view>
+					<view class="goods-detail-code">GMT000001</view>
+					<view class="goods-detail-name font-bold">GMT | 连衣裙</view>
+				</view>
+				<view class="collect-box">
+					<view class="cuIcon cuIcon-like"> 96</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="goods-detail-item bg-white">
+		<view class="item-header flex flex-align-center justify-between">
+			<view class="item-title font-bold">价格</view>
+			<view class="item-action text-blue">开通会员</view>
+		</view>
+		<view class="item-content">
+			<view class="flex flex-align-center bg-gray title">
+				<view class="flex1">
+					<view class="text-center">出厂价</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center active">会员价</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">批发价</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">加盟代理</view>
+				</view>
+			</view>
+			<view class="flex flex-align-center price-list">
+				<view class="flex1">
+					<view class="text-center text-price">94.00</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center text-price text-theme active">84.00</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center text-price">75.00</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center text-price">68.00</view>
+				</view>
+			</view>
+		</view>
+		<view class="item-header flex flex-align-center justify-between">
+			<view class="item-title font-bold">库存</view>
+		</view>
+		<view class="item-content">
+			<view class="flex flex-align-center stock">
+				<view class="flex1">
+					<view class="text-center">颜色</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">M</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">L</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">XL</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">2XL</view>
+				</view>
+			</view>
+			<view class="flex flex-align-center stock">
+				<view class="flex1">
+					<view class="text-center">绿色</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">6</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">17</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">11</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">7</view>
+				</view>
+			</view>
+			<view class="flex flex-align-center stock">
+				<view class="flex1">
+					<view class="text-center">藏青</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">10</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">14</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">20</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">15</view>
+				</view>
+			</view>
+			<view class="flex flex-align-center stock">
+				<view class="flex1">
+					<view class="text-center">桔色</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">2</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">10</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">3</view>
+				</view>
+				<view class="flex1">
+					<view class="text-center">5</view>
+				</view>
+			</view>
+		</view>
+		<view class="item-header flex flex-align-center justify-between">
+			<view class="item-title font-bold">重量</view>
+			<view class="item-action text-blue">0.60kg</view>
+		</view>
+	</view>
+	<!-- 购买承诺 -->
+	<view class="promise bg-white">
+		<view class="flex flex-align-center">
+			<view class="flex1 promise-item">
+				<view class="flex flex-align-center">
+					<view class="text-theme cuIcon cuIcon-roundcheck"></view>收货2天可退
+				</view>
+			</view>
+			<view class="flex1 promise-item">
+				<view class="flex flex-align-center justify-center">
+					<view class="text-theme cuIcon cuIcon-roundcheck"></view>次品60天可退
+				</view>
+			</view>
+			<view class="flex1 promise-item">
+				<view class="flex flex-align-center justify-end">
+					<view class="text-theme cuIcon cuIcon-roundcheck"></view>24小时发货
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 详情 -->
+	<view class="spl-line">
+		<view class="left-line"></view>图文详情<view class="right-line"></view>
+	</view>
+	<view class="goods-introduction bg-white">
+		<view class="graphic-details">
+			<image src="../../images/goodsdetail/g1.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g2.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g3.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g4.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g5.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g6.jpg" mode="widthFix"></image>
+			<image src="../../images/goodsdetail/g7.jpg" mode="widthFix"></image>
+		</view>
+	</view>
+	<view class="spl-line">
+		<view class="left-line"></view>猜你喜欢<view class="right-line"></view>
+	</view>
+	<view class="common-goods-container">
+		<view class="common-goods-list">
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p1.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">24.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">24.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">23.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p1.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">27.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p1.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">23.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../images/p2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-red sm">代理</view>
+						<view class="price text-price">27.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<action-sheet bindactiontap="btnClick" show="{{showDialog}}">
+		<view class="show-goods-param__box bg-white padding">
+			<view class="sheet-goods-info flex align-center">
+				<image class="radius" src="https://gd2.alicdn.com/imgextra/i4/3616083866/O1CN01IXtLkw1eQfmTm5NYf_!!3616083866.jpg"
+				 mode="widthFix"></image>
+				<view class="flex1 margin-left">
+					<view class="flex flex-column">
+						<text class="text-price price">55.00/件</text>
+						<text>库存：25</text>
+						<text class="text-gray">选择您的进货参数后，点击确定去计算</text>
+					</view>
+				</view>
+			</view>
+			<view class="sheet-goods-attr">
+				<view class="sheet-goods-attr__item">
+					<view class="goods-attr__title margin-tb-sm">颜色</view>
+					<view class="goods-attr__param margin-tb-sm">
+						<scroll-view class="scroll-view_x" scroll-x scroll-with-animation="true">
+							<view class="param-button"><button class="cu-btn line-theme radius">红色</button><text class="num round">3</text></view>
+							<view class="param-button"><button class="cu-btn radius">橙色</button><text class="num round" wx:if="{{shownum}}">5</text></view>
+							<view class="param-button"><button class="cu-btn line-theme radius">黄色</button><text class="num round">7</text></view>
+							<view class="param-button"><button class="cu-btn radius">绿色</button><text class="num round" wx:if="{{shownum}}">3</text></view>
+							<view class="param-button"><button class="cu-btn radius">蓝色</button><text class="num round" wx:if="{{shownum}}">5</text></view>
+							<view class="param-button"><button class="cu-btn radius">深蓝色</button><text class="num round" wx:if="{{shownum}}">2</text></view>
+							<view class="param-button"><button class="cu-btn radius">米兰色</button><text class="num round" wx:if="{{shownum}}">2</text></view>
+							<view class="param-button"><button class="cu-btn radius">象牙白</button><text class="num round" wx:if="{{shownum}}"></text></view>
+						</scroll-view>
+					</view>
+				</view>
+			</view>
+			<view class="sheet-goods-size">
+				<import src="../template/template.wxml" />
+				<view class="sheet-goods-size__item top-line" wx:for="{{sizeArr}}" wx:key="index">
+					<view>{{item.size}}</view>
+					<view class="goods-stock flex justify-end align-center">
+						<view class="text-gray">库存：{{item.stock}}</view>
+						<view class="addsize-box">
+							<template is="quantity" data="{{ ...item,index:index}}" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="fixed-bottom">
+			<view class="sheet-goods-total top-line padding-tb-sm text-center">
+				<text>共10件</text>
+				<text class="margin-left-sm text-price price">285.00</text>
+			</view>
+			<view class="sheet-bottom flex flex-direction">
+				<button class="cu-btn lg bg-theme">确定</button>
+			</view>
+		</view>
+
+	</action-sheet>
+	<view class="cu-bar bg-white tabbar goods-fixed top-line">
+		<view class="action">
+			<view class="cuIcon-service"></view> 客服
+		</view>
+		<view class="action text-theme">
+			<view class="cuIcon-likefill"></view> 已收藏
+		</view>
+		<view class="action">
+			<view class="cuIcon-cart"></view>购物车
+		</view>
+		<view class="bg-theme submit" bindtap="addCart">加入进货车</view>
+	</view>
+</scroll-view>

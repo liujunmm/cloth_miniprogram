@@ -1,0 +1,260 @@
+<!--首页-->
+<!--引入骨架屏模版 -->
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<navBar title='GMT-你估我唔倒' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{false}}" iconTheme='white' bindback="handlerGobackClick"></navBar>
+<view class="content skeleton">
+	<view class="cu-bar search bg-white fixed" style="top:{{CustomBar}}px;">
+		<view class="search-form round skeleton-rect">
+			<text class="cuIcon-search"></text>
+			<input bindinput="InputFocus" :adjust-position="false" type="text" placeholder="搜索商品/品牌/分类" confirm-type="search"></input>
+		</view>
+		<view class="action">
+			<view class="text-center sub-action">
+				<view class="cuIcon cuIcon-mark  skeleton-radius"></view>
+				<text class="skeleton-rect">客服</text>
+			</view>
+			<view class="text-center sub-action" bindtap='getScancode'>
+				<view class="cuIcon cuIcon-scan skeleton-radius"></view>
+				<text class="skeleton-rect">扫一扫</text>
+			</view>
+		</view>
+	</view>
+	<scroll-view class="page" scroll-y="true" style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+		<!-- 轮播图 -->
+		<view class='carousel skeleton-rect'>
+			<swiper class='carousel_swiper' indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval='{{interval}}' current="{{swiperCurrent}}" bindchange="swiperChange">
+				<block wx:for="{{carouselList}}" wx:key="key">
+					<swiper-item bindtap='chomeCarouselClick' data-url='{{item.href}}'>
+						<image class="carouselImg" src='{{item.src}}' mode='widthFix'></image>
+					</swiper-item>
+				</block>
+			</swiper>
+			<view class="dots">
+				<block wx:for="{{carouselList}}" wx:key="unique">
+					<view class="dot{{index == swiperCurrent ? ' current' : ''}}"></view>
+				</block>
+			</view>
+		</view>
+		<!-- 分类列表 -->
+		<view class="classify">
+			<view class="cu-list grid col-5 no-border">
+				<!-- 循环元素 -->
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/1.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">连衣裙</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/2.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">套装</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/3.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">上衣</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/4.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">裤裙</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/5.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">毛衣</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/6.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">风衣</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/7.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">外套</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/8.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">马甲</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/9.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">打底</text>
+				</view>
+				<view class="cu-item">
+					<view class="skeleton-radius"><image src="../../../images/5.jpg" mode="widthFix"></image></view>
+					<text class="skeleton-rect">配饰</text>
+				</view>
+			</view>
+		</view>
+		<!-- 广告条 -->
+		<view class="middle-Banner skeleton-rect">
+			<image src="../../../images/middle.jpg" mode="widthFix"></image>
+		</view>
+		<!-- 首页推荐 -->
+		<view class="recommend margin">
+			<view class="recommend-header">
+				<view class="recommend-title skeleton-rect">热销宽松牛榜</view>
+				<view class="recommend-subtitle ellipsis1 skeleton-rect">解锁宽松女装单品，速成搭配高手</view>
+			</view>
+			<view class="recommend-list grid col-3 no-border">
+				<!-- 循环元素 -->
+				<view class="cu-item recommend-item">
+					<image class="skeleton-rect" src="../../../images/n1.jpg" mode="widthFix"></image>
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">批发价</view><view class="price text-price">68.00</view>
+					</view>
+				</view>
+				<view class="cu-item recommend-item">
+					<image class="skeleton-rect" src="../../../images/n2.jpg" mode="widthFix"></image>
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">批发价</view><view class="price text-price">68.00</view>
+					</view>
+				</view>
+				<view class="cu-item recommend-item">
+					<image class="skeleton-rect" src="../../../images/n1.jpg" mode="widthFix"></image>
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">批发价</view><view class="price text-price">68.00</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 首页推荐 -->
+		<view class="recommend margin">
+			<view class="recommend-header">
+				<view class="recommend-title">热销韩版衫榜</view>
+				<view class="recommend-subtitle ellipsis1">解锁宽松女装单品，速成搭配高手</view>
+			</view>
+			<view class="recommend-list grid col-3 no-border">
+				<!-- 循环元素 -->
+				<view class="cu-item recommend-item">
+					<view><image src="../../../images/s1.jpg" mode="widthFix"></image></view>
+					<text class="price text-price">80.00</text>
+				</view>
+				<view class="cu-item recommend-item">
+					<view><image src="../../../images/s2.jpg" mode="widthFix"></image></view>
+					<text class="price text-price">80.00</text>
+				</view>
+				<view class="cu-item recommend-item">
+					<view><image src="../../../images/s1.jpg" mode="widthFix"></image></view>
+					<text class="price text-price">80.00</text>
+				</view>
+			</view>
+		</view>
+		<!-- 首页分割线 -->
+		<view class="spl-line">
+			<view class="left-line"></view>
+			全部新款
+			<view class="right-line"></view>
+		</view>
+		<view class="common-goods-container">
+			<view class="common-goods-list">
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p1.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">24.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">24.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">23.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p1.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">27.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p1.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">23.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">27.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p1.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">23.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/p2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">27.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/k2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">23.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+				<view class="common-goods-item" bindtap="godetail" data-id="2">
+					<image src="../../../images/k2.jpg" mode="widthFix" lazy-load="{{true}}"></image>
+					<view class="common-goods-info">
+						<view class="flex flex-align-center">
+							<view class="cu-tag bg-theme sm">代理</view>
+							<view class="price text-price">27.00</view>
+						</view>
+						<view>GTA0001</view>
+						<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+

@@ -1,0 +1,41 @@
+/* pages/confirmorder/confirmorder.wxss */
+.page{
+	padding-bottom: 100rpx;
+}
+.address-info{font-size: 32rpx;}
+.cart-item image {
+	margin: 0 20rpx 0 0;
+}
+.cart-item {
+	padding: 30rpx;
+}
+.attr-item {
+	margin: 10rpx 0;
+}
+input{width: 80%;}
+.order-info-bar{padding: 0 30rpx;margin-bottom: 20rpx;}
+.preferential-item.justify-start{
+	justify-content: flex-start;
+}
+.confirm-fixed{
+	z-index: 99;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.confirm-fixed .action{
+	font-size: 28rpx !important;
+}
+.confirm-fixed .text-price{
+	font-size: 44rpx;
+}
+.confirm-order-btn{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-self: stretch;
+	padding: 0 60rpx;
+}
+

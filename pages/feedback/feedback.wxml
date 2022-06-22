@@ -1,0 +1,2 @@
+<!--pages/feedback/feedback.wxml-->
+<navBar title='我要反馈' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>

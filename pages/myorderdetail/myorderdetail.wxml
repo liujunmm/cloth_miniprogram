@@ -1,0 +1,131 @@
+<!--pages/myorderdetail/myorderdetail.wxml-->
+<navBar title='订单详情' background='#FF6D8A' backgroundColorTop='#000000' color='#fff' back="{{true}}" iconTheme="white"
+ bindback="handlerGobackClick"></navBar>
+<scroll-view class="page" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+	<view class="bg-theme padding">
+		<view class="cu-steps">
+			<view class="cu-item text-white">
+				<text class="cuIcon-roundcheckfill"></text> 待付款
+			</view>
+			<view class="cu-item text-white">
+				<text class="cuIcon-title"></text> 待发货
+			</view>
+			<view class="cu-item text-white">
+				<text class="cuIcon-title"></text> 待收货
+			</view>
+			<view class="cu-item text-white">
+				<text class="cuIcon-title"></text> 已完成
+			</view>
+		</view>
+	</view>
+	<view class="order-detail-address bg-white padding mt-10">
+		<view class="flex align-center">
+			<view class="text-black contact-name font-bold">GMT_CO</view>
+			<view class="text-black conact-phone margin-left">183****0540</view>
+		</view>
+		<view class="text-gray">广东省 珠海市 香洲区 南屏镇环屏二街19号好来客住宿</view>
+	</view>
+	<view class="order-container mt-10">
+		<view class="order-list">
+			<!-- 循环元素 -->
+			<view class="order-item bg-white" bindtap="godetail" data-orderNum="20200409">
+				<view class="order-item-header padding flex flex-align-center bottom-line">
+					<view class="flex1 flex flex-align-center">
+						<view class="order-icon bg-theme">
+							<view class="text-white cuIcon-clothesfill"></view>
+						</view>
+						<view class="order-no font-bold">商品信息</view>
+					</view>
+				</view>
+				<view class="order-content">
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="preferential padding top-line">
+					<view class="preferential-item">
+						<view class="text-title">商品优惠</view>
+						<view>满100减20</view>
+					</view>
+					<view class="preferential-item">
+						<view class="text-title">配送费</view>
+						<view class="text-price">10</view>
+					</view>
+				</view>
+				<view class="order-list-total padding-sm text-right top-line">
+					共<text class="price">12</text>件商品，总价：<text class="price text-price">300.00</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="order-info bg-white">
+		<view class="order-item-header padding flex flex-align-center bottom-line">
+			<view class="flex1 flex flex-align-center">
+				<view class="order-icon bg-theme">
+					<view class="text-white iconfont icon-order"></view>
+				</view>
+				<view class="order-no font-bold">订单信息</view>
+			</view>
+		</view>
+		<view class="padding">
+			<view class="preferential-item">
+				<view class="text-title">订单编号<view class="cu-tag line-theme radius sm">复制</view></view>
+				<view>WX202004092030280123</view>
+			</view>
+			<view class="preferential-item">
+				<view class="text-title">下单时间</view>
+				<view>2020-4-9 20:30:44</view>
+			</view>
+			<view class="preferential-item">
+				<view class="text-title">支付方式</view>
+				<view>微信支付</view>
+			</view>
+		</view>
+		<view class="padding top-line">	
+			<view class="preferential-item">
+				<view class="text-title">门店</view>
+				<view>广东省东莞市虎门镇分店</view>
+			</view>
+			<view class="preferential-item">
+				<view class="text-title">配送方式</view>
+				<view>快递配送</view>
+			</view>
+			<view class="preferential-item flex">
+				<view class="text-title">快递单号<view class="cu-tag line-theme radius sm">复制</view></view>
+				<view>92345625514</view>
+			</view>
+		</view>
+	</view>
+	<view class="order-detail-bottom top-line">
+		<view class="cu-bar bg-white border flex align-center">
+			<view class="order-total">合计：<text class="text-price price">300.00</text></view>
+			<view class="flex1 text-right">
+				<button class="cu-btn round line-gray">取消订单</button>
+				<button class="cu-btn round bg-theme margin-left">去付款</button>
+			</view>
+		</view>
+	</view>
+</scroll-view>

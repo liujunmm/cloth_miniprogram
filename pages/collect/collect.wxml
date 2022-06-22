@@ -1,0 +1,2 @@
+<!--pages/collect/collect.wxml-->
+<navBar title='我的收藏' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>

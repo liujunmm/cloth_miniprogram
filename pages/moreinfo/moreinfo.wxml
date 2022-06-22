@@ -1,0 +1,45 @@
+<!--pages/setting/setting.wxml-->
+<navBar title='' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>
+<view class="mt-10">
+	<view class="cu-list menu sm-border">
+		<view class="cu-item arrow">
+			<view class="content">
+				<text class="text-black">生日</text>
+			</view>
+			<view class="action">
+				<picker mode="date" value="{{date}}" start="1970-09-01" end="2020-09-01" bindchange="DateChange">
+					<view class="picker text-grey">
+						{{date}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="cu-item arrow">
+			<view class="content">
+				<text class="text-black">地区</text>
+			</view>
+			<view class="action">
+				<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+					<view class="picker text-grey">
+						{{region[0]}}，{{region[1]}}，{{region[2]}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="cu-item arrow">
+			<view class="content">
+				<text class="text-black">性别</text>
+			</view>
+			<view class="action">
+				<picker bindchange="PickerChange" value="{{gender}}" range="{{picker}}">
+					<view class="picker text-grey">
+						{{gender?picker[gender]:'保密'}}
+					</view>
+				</picker>
+			</view>
+		</view>
+	</view>
+	<view class="submit-box padding flex flex-direction">
+		<button class="cu-btn round lg bg-theme">保存</button>
+	</view>
+</view>

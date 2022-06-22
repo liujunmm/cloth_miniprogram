@@ -1,0 +1,177 @@
+<!--pages/myorder/myorder.wxml-->
+<navBar title='我的订单' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>
+<view class="fixed bg-white shadow" style="top:{{CustomBar}}px;">
+	<scroll-view scroll-x class="bg-white nav">
+		<view class="flex text-center order-type">
+			<view class="cu-item flex-sub {{1==TabCur?'text-theme cur':''}}" bindtap="tabSelect" data-id="1">全部</view>
+			<view class="cu-item flex-sub {{2==TabCur?'text-theme cur':''}}" bindtap="tabSelect" data-id="2">待付款</view>
+			<view class="cu-item flex-sub {{3==TabCur?'text-theme cur':''}}" bindtap="tabSelect" data-id="3">待收貨</view>
+			<view class="cu-item flex-sub {{4==TabCur?'text-theme cur':''}}" bindtap="tabSelect" data-id="4">已完成</view>
+			<view class="cu-item flex-sub {{5==TabCur?'text-theme cur':''}}" bindtap="tabSelect" data-id="5">已取消</view>
+		</view>
+	</scroll-view>
+</view>
+<view class="page">
+	<view class="order-container">
+		<view class="order-list">
+			<!-- 循环元素 -->
+			<view class="order-item bg-white">
+				<view class="order-item-header flex flex-align-center bottom-line" bindtap="godetail" data-orderNum="20200409">
+					<view class="flex1 flex flex-align-center">
+						<view class="order-icon bg-theme">
+							<view class="text-white iconfont icon-order"></view>
+						</view>
+						<view class="order-no font-bold">GMT2020040914260540</view>
+					</view>
+					<view class="order-status text-red">待付款</view>
+				</view>
+				<view class="order-content">
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="order-list-total text-right top-line">
+					共<text class="price">12</text>件商品，总价：<text class="price text-price">300.00</text>
+				</view>
+				<view class="order-list-btn text-right top-line">
+					<button class="cu-btn line-theme">取消订单</button>
+					<button class="cu-btn bg-theme">确认付款</button>
+				</view>
+			</view>
+			<view class="order-item bg-white">
+				<view class="order-item-header flex flex-align-center bottom-line" bindtap="godetail" data-orderNum="20200409">
+					<view class="flex1 flex flex-align-center">
+						<view class="order-icon bg-theme">
+							<view class="text-white iconfont icon-order"></view>
+						</view>
+						<view class="order-no font-bold">GMT2020040914260540</view>
+					</view>
+					<view class="order-status text-yellow">待发货</view>
+				</view>
+				<view class="order-content">
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="order-list-total text-right top-line">
+					共<text class="price">12</text>件商品，总价：<text class="price text-price">300.00</text>
+				</view>
+				<view class="order-list-btn text-right top-line">
+					<text class="text-gray">等待卖家发货</text>
+				</view>
+			</view>
+			<view class="order-item bg-white">
+				<view class="order-item-header flex flex-align-center bottom-line" bindtap="godetail" data-orderNum="20200409">
+					<view class="flex1 flex flex-align-center">
+						<view class="order-icon bg-theme">
+							<view class="text-white iconfont icon-order"></view>
+						</view>
+						<view class="order-no font-bold">GMT2020040914260540</view>
+					</view>
+					<view class="order-status text-green">待收货</view>
+				</view>
+				<view class="order-content">
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="order-list-total text-right top-line">
+					共<text class="price">12</text>件商品，总价：<text class="price text-price">300.00</text>
+				</view>
+				<view class="order-list-btn text-right top-line">
+					<button class="cu-btn line-theme">查看物流</button>
+					<button class="cu-btn bg-theme">确认收货</button>
+				</view>
+			</view>
+			<view class="order-item bg-white">
+				<view class="order-item-header flex flex-align-center bottom-line" bindtap="godetail" data-orderNum="20200409">
+					<view class="flex1 flex flex-align-center">
+						<view class="order-icon bg-theme">
+							<view class="text-white iconfont icon-order"></view>
+						</view>
+						<view class="order-no font-bold">GMT2020040914260540</view>
+					</view>
+					<view class="order-status text-blue">已完成</view>
+				</view>
+				<view class="order-content">
+					<view class="goods-item flex flex-align-center bottom-line">
+						<view class="goods-thumbnail">
+							<image src="../../images/k2.jpg" mode="widthFix" lazy-load></image>
+						</view>
+						<view class="flex1 goods-attr">
+							<view class="goods-title text-black ellipsis2">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+							<view class="goods-attr-desc">款号：GMT000001</view>
+							<view class="goods-attr-desc flex flex-align-center">
+								<view class="flex1">单价：<text class="price text-price">50.00/件</text></view>
+								<view class="text-gray">6x</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="order-list-total text-right top-line">
+					共<text class="price">12</text>件商品，总价：<text class="price text-price">300.00</text>
+				</view>
+				<view class="order-list-btn text-right top-line">
+					<button class="cu-btn line-theme">评论晒单</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

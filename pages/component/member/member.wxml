@@ -1,0 +1,167 @@
+<scroll-view class="page" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+	<view class="user-container">
+		<navigationBar id="navigationBar" title="我的"></navigationBar>
+		<block wx:if="{{hasLogin}}">
+		<view class="user-header flex flex-align-center" bindtap="gosetting">
+			<view class="user-headimg">
+				<image class="shadow" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+			</view>
+			<view class="flex1 margin-left">
+				<view class="nickname font-bold">{{userInfo.nickName}}</view>
+				<view class="userphone">
+					<view class="cuIcon-mobile"></view>183****0540
+				</view>
+			</view>
+		</view>
+		</block>
+		<block wx:else>
+			<!-- 该接口用于替换 wx.getUserInfo -->
+			<view class="login-box padding text-center">
+				<button class="cu-btn bg-theme round radius" wx:if="{{canIUse}}" bindtap="getUserProfile">点击授权登录</button>
+			</view>
+		</block>
+		<view class="beautiful-top"></view>
+		<view class="beautiful-right"></view>
+		<view class="beautiful-left"></view>
+		<view class="beautiful-right-line"></view>
+		<view class="beautiful-bottom-block"></view>
+		<view class="beautiful-bottom-block2"></view>
+	</view>
+	<view class="user-common-bar bg-white order-block">
+		<view class="card-title bottom-line arrow" bindtap="gomyorder" data-id="5">
+			<view class="bar-title font-bold">我的订单</view>
+			<view class="text-gray">全部订单</view>
+		</view>
+		<view class="cu-list grid col-4 no-border">
+			<view class="cu-item" bindtap="gomyorder" data-id="1">
+				<view class="iconfont icon-unpaid"></view>
+				<text>待付款</text>
+			</view>
+			<view class="cu-item" bindtap="gomyorder" data-id="2">
+				<view class="iconfont icon-unreceived"></view>
+				<text>待收货</text>
+			</view>
+			<view class="cu-item" bindtap="gomyorder" data-id="3">
+				<view class="iconfont icon-finish"></view>
+				<text>已完成</text>
+			</view>
+			<view class="cu-item" bindtap="gomyorder" data-id="4">
+				<view class="iconfont icon-refund"></view>
+				<text>退货/售后</text>
+			</view>
+		</view>
+	</view>
+	<view class="user-common-bar bg-white">
+		<view class="card-title bottom-line">
+			<view class="bar-title font-bold">个人相关</view>
+		</view>
+		<view class="cu-list grid col-4 no-border">
+			<view class="cu-item"  bindtap="goaddress">
+				<view class="text-shadow iconfont icon-address"></view>
+				<text>收货地址</text>
+			</view>
+			<view class="cu-item" bindtap="gocollect">
+				<view class="text-shadow iconfont icon-collect"></view>
+				<text>我的收藏</text>
+			</view>
+			<view class="cu-item" bindtap="gohistory">
+				<view class="text-shadow iconfont icon-history"></view>
+				<text>我的足迹</text>
+			</view>
+			<view class="cu-item" bindtap="gocoupon">
+				<view class="text-shadow iconfont icon-coupon"></view>
+				<text>我的优惠</text>
+			</view>
+			<view class="cu-item" bindtap="goservice">
+				<view class="text-shadow iconfont icon-kefu"></view>
+				<text>我的客服</text>
+			</view>
+			<view class="cu-item" bindtap="gohelper">
+				<view class="text-shadow iconfont icon-help"></view>
+				<text>帮助中心</text>
+			</view>
+			<view class="cu-item" bindtap="gofeedback">
+				<view class="text-shadow iconfont icon-feedback"></view>
+				<text>我要吐槽</text>
+			</view>
+			<view class="cu-item" bindtap="gosetting">
+				<view class="text-shadow iconfont icon-setting"></view>
+				<text>设置</text>
+			</view>
+		</view>
+	</view>
+	<view class="spl-line">
+		<view class="left-line"></view>猜你还喜欢<view class="right-line"></view>
+	</view>
+	<view class="common-goods-container">
+		<view class="common-goods-list">
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/p1.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">24.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/k2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">24.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">右风左岸 | 牛仔短裤女夏2020新款</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/k2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">27.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">右风左岸 | 牛仔短裤女夏2020新款</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/p2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">23.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/p1.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">23.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">MEIMI服饰 | 罗文棉韩版上衣</view>
+				</view>
+			</view>
+			<view class="common-goods-item" bindtap="godetail" data-id="2">
+				<image src="../../../images/k2.jpg" mode="widthFix"></image>
+				<view class="common-goods-info">
+					<view class="flex flex-align-center">
+						<view class="cu-tag bg-theme sm">代理</view>
+						<view class="price text-price">27.00</view>
+					</view>
+					<view>GTA0001</view>
+					<view class="ellipsis1">右风左岸 | 牛仔短裤女夏2020新款</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

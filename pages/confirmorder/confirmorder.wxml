@@ -1,0 +1,122 @@
+<!--pages/confirmorder/confirmorder.wxml-->
+<navBar title='确认订单' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>
+<scroll-view class="page" scroll-y="true" style="height:calc(100vh - {{CustomBar}}px)" scroll-with-animation="true" enable-back-to-top="true">
+	<view class="address-box mt-10 padding bg-white arrow text-black">
+		<view class="address-province flex align-center">
+			<view class="cu-tag bg-theme sm">默认</view>
+			<view class="margin-left-sm">广东省珠海市香洲区</view>
+		</view>
+		<view class="address-info font-bold margin-tb-xs">翠前北路三街118号森宇国际大厦3001</view>
+		<view class="contact-info">T恤被我剪烂了<text class="phone margin-left-sm">183****0540</text></view>
+	</view>
+	<view class="cart-container">
+		<view class="cart-list">
+			<!-- 进货商品列表 -->
+			<view class="cart-item bg-white">
+				<view class="goods-cart-info flex align-center">
+					<image src="../../images/k2.jpg" mode="widthFix"></image>
+					<view class="flex1">
+						<view class="font-bold text-black">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+						<view>款号：GMT000001</view>
+						<view class="flex flex-align-center">
+							<view>单价：<text class="text-price price">50.00/件</text></view>
+							<view class="flex1"></view>
+						</view>
+					</view>
+				</view>
+				<view class="goods-cart-detail">
+					<!-- 进货参数循环 -->
+					<view class="goods-detail-attr flex align-center">
+						<view class="flex1 attr-item">
+							<view class="flex align-center">
+								<view class="flex1 goods-attr">颜色：绿色</view>
+								<view class="flex1 goods-attr">尺寸：S</view>
+								<view class="flex1 goods-attr">数量：10件</view>
+							</view>
+						</view>
+					</view>
+					<view class="goods-detail-attr flex align-center">
+						<view class="flex1 attr-item">
+							<view class="flex align-center">
+								<view class="flex1 goods-attr">颜色：蓝色</view>
+								<view class="flex1 goods-attr">尺寸：M</view>
+								<view class="flex1 goods-attr">数量：2件</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- 进货商品列表 -->
+			<view class="cart-item bg-white">
+				<view class="goods-cart-info flex align-center">
+					<image src="../../images/k2.jpg" mode="widthFix"></image>
+					<view class="flex1">
+						<view class="font-bold text-black">GMT | 牛仔褲 清爽夏天潮流搭配</view>
+						<view>款号：GMT000001</view>
+						<view class="flex flex-align-center">
+							<view>单价：<text class="text-price price">50.00/件</text></view>
+							<view class="flex1"></view>
+						</view>
+					</view>
+				</view>
+				<view class="goods-cart-detail">
+					<!-- 进货参数循环 -->
+					<view class="goods-detail-attr flex align-center">
+						<view class="flex1 attr-item">
+							<view class="flex align-center">
+								<view class="flex1 goods-attr">颜色：绿色</view>
+								<view class="flex1 goods-attr">尺寸：S</view>
+								<view class="flex1 goods-attr">数量：5件</view>
+							</view>
+						</view>
+					</view>
+					<view class="goods-detail-attr flex align-center">
+						<view class="flex1 attr-item">
+							<view class="flex align-center">
+								<view class="flex1 goods-attr">颜色：蓝色</view>
+								<view class="flex1 goods-attr">尺寸：M</view>
+								<view class="flex1 goods-attr">数量：10件</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="order-info">
+		<view class="order-info-bar bg-white">
+			<view class="preferential-item">
+				<view class="text-title">配送</view>
+				<view>快递运输</view>
+			</view>
+			<view class="preferential-item justify-start">
+				<view class="text-title">留言</view>
+				<input type="text" placeholder="如果你有其他的需求,请留言"/>
+			</view>
+		</view>
+		<view class="order-info-bar bg-white">	
+			<view class="preferential-item">
+				<view class="text-title">商品金额</view>
+				<text class="text-price">300.00</text>
+			</view>
+			<view class="preferential-item">
+				<view class="text-title">运费</view>
+				<text class="text-price">10.00</text>
+			</view>
+			<view class="preferential-item flex">
+				<view class="text-title">优惠</view>
+				<text class="text-price">0.00</text>
+			</view>
+			<view class="preferential-item flex">
+				<view class="text-title">合计</view>
+				<text class="text-price">310.00</text>
+			</view>
+		</view>
+	</view>
+	<view class="confirm-fixed cu-bar bg-white tabbar top-line">
+		<view class="flex align-center text-black text-left padding-left">
+			合计：<text class="text-price price">310.00</text>
+		</view>
+		<view class="bg-theme confirm-order-btn">提交订单</view>
+	</view>
+</scroll-view>

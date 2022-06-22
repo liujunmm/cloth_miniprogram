@@ -1,0 +1,2 @@
+<!--pages/coupon/coupon.wxml-->
+<navBar title='我的优惠' background='#ffffff' backgroundColorTop='#000000' color='#000' back="{{true}}" bindback="handlerGobackClick"></navBar>

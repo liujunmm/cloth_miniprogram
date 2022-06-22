@@ -1,0 +1,36 @@
+/* pages/component/cart/cart.wxss */
+@import "../../template/template.wxss";
+.cb{
+  transform: scale(0.8,0.8);
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #FF6D8A;
+}
+.page{
+	padding-top: 80rpx;
+}
+.cart-top-bar{
+	height: 80rpx;
+	line-height: 80rpx;
+	padding:0 30rpx ;
+}
+.select-all{
+	display: flex;
+	align-items: center;
+}
+.balance{
+	width: 240rpx;
+	height: 100rpx;
+	border-radius: 0;
+	font-size: 32rpx;
+}
+.total-box{
+	line-height: 1.4;
+}
+.total-price{
+	font-weight: 700;
+	font-size: 32rpx;
+}
+.total-coupon{
+	font-size: 24rpx;
+}
